@@ -9,11 +9,6 @@
  */
 
 (function () {
-
-    /**
-     * load jQUery immediately
-     */
-
     var jQueryBootstrap = function (callback) {
 
         var remoteScript = document.createElement('script');
