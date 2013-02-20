@@ -14,7 +14,7 @@
         var remoteScript = document.createElement('script');
 
         remoteScript.type = "text/javascript";
-        remoteScript.src = "https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js";
+        remoteScript.src = "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js";
 
         remoteScript.onload = function(){
             var compatible = document.createTextNode('jQuery.noConflict(true);');
