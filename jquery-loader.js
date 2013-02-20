@@ -2,7 +2,10 @@
  * Load jQuery in compatibility mode.  Intended for use in hostile
  * environments :) where another JS library has previously been loaded.
  *
- * See http://stackoverflow.com/questions/2074982
+ * See also:
+ * http://stackoverflow.com/questions/2074982
+ * http://api.jquery.com/jQuery.noConflict/
+ *
  */
 
 (function () {
@@ -19,7 +22,7 @@
         remoteScript.src = "https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js";
 
         remoteScript.onload = function(){
-            var compatible = document.createTextNode('jQuery.noConflict();');
+            var compatible = document.createTextNode('jQuery.noConflict(true);');
             var compatibilityScript = document.createElement('script');
 
             compatibilityScript.type = "text/javascript";
@@ -39,21 +42,18 @@
 
     };
 
-    var loadUI = function(){
-
-        /* here you can use the new jQuery object...  */
-
-    };
-
     var initializeUI = function () {
         jQueryBootstrap(loadUI);
     };
 
+    var loadUI = function(){
+        var $ = jQuery;
 
+        /* code within this block uses our version of jQuery */
+
+    };
 
     window.addEventListener('load',
                             initializeUI,
                             false);
-
-
 }());
