@@ -1,0 +1,10 @@
+# Mac OS
+.DS_Store
+
+# Emacs
+*~
+*#
+.#*
+
+# Adobe Creative Suite
+.BridgeLabelsAndRatings
